@@ -4,10 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RegistParcelComponent } from './components/regist-parcel/regist-parcel.component';
 import { TrackPackageComponent } from './components/track-package/track-package.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 const routes: Routes = [
   {path: 'registparcel', component : RegistParcelComponent},
   {path: 'trackpackage', component: TrackPackageComponent},
+  {path: 'payment', component: PaymentComponent},
   {path: '',
    redirectTo: '/registparcel',
    pathMatch:'full'
