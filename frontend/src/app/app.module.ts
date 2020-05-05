@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { RegistParcelComponent } from './components/regist-parcel/regist-parcel.component';
 import { TrackPackageComponent } from './components/track-package/track-package.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { AssignmentComponent } from './components/assignment/assignment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistParcelComponent,
     TrackPackageComponent,
-    PaymentComponent
+    PaymentComponent,
+    AssignmentComponent
   ],
   imports: [
     BrowserModule,
