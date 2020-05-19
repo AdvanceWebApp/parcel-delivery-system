@@ -1,0 +1,13 @@
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Administrator System </span>
+
+    <div class="rounded-lg"> 
+        <button routerLink="/ManageSystemAccess" type="button" class="btn btn-dark">ManageSystemAccess</button>
+        <button routerLink="/ManageEmployees" type="button" class="btn btn-dark">ManageEmployees</button>
+        <button  type="button" class="btn " (click)="signOut()"> <i class="fa fa-sign-out text-white " aria-hidden="true" ></i> </button>
+    </div>
+    
+</nav>
+
+<router-outlet></router-outlet>
+
