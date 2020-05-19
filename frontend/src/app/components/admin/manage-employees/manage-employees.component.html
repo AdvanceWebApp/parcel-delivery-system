@@ -1,0 +1,131 @@
+<app-admin-navbar></app-admin-navbar>
+<br /><br />
+
+
+<div class="row">
+    <div class="col">
+        <div class="container-md">
+            <div class="card">
+
+
+                <div class="card-header">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <h2>Manage Employees</h2>
+                        </div>
+
+
+                        <form class="form-inline">
+                            <input class="form-control mr-lg-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+
+                    </div>
+
+                    <br>
+                    <table class="table table-striped table-inverse">
+                        <thead class="thead-inverse text-light bg-secondary">
+                            <tr>
+
+                                <th>ID Employees</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>position</th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let itemt of items">
+
+                                <td scope="row">{{itemt.ID_Employees}}</td>
+                                <td>{{itemt.firstName}}</td>
+                                <td>{{itemt.lastName}}</td>
+                                <td>{{itemt.position}}</td>
+                                <td>
+
+                                    <button type="button" class="btn btn-warning" data-toggle="modal"
+                                        data-target="#staticBackdrop" (click)="itemAdd(itemt)">
+                                        <i class="fa fa-pencil text-white" aria-hidden="true"></i>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                        (click)="deletes(itemt.id)">
+                                        <i class="fa fa-trash text-white" aria-hidden="true"></i>
+                                    </button>
+
+
+                                    <div class="modal fade" id="staticBackdrop" data-backdrop="static"
+                                        data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+
+                                                <div class="modal-body">
+                                                    
+                                                    <div class="modal-body">
+                                                        <h2>Edit employee information</h2>
+                                                    <br>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">ID_Employee</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control"
+                                                                    [(ngModel)]='item.ID_Employees'>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">FirstName</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control"
+                                                                    [(ngModel)]='item.firstName'>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">LastName</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control"
+                                                                    [(ngModel)]='item.lastName'>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Email</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control"
+                                                                    [(ngModel)]='item.email'>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-2 col-form-label">Position</label>
+                                                            <div class="col-sm-10">
+                                                                <select class="form-control"
+                                                                    [(ngModel)]='item.position'>
+                                                                    <option *ngFor="let item of positions">
+                                                                        {{item}}
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-success" data-dismiss="modal"
+                                                        (click)="put()">confirm</button>
+                                                    <button type="button" class="btn btn-secondary-text"
+                                                        data-dismiss="modal">Close</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
