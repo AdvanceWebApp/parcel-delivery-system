@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
+import{LoginComponent} from './components/login/login.component';
 import { ManageEmployeesComponent } from './components/admin/manage-employees/manage-employees.component';
 import { ManageSystemAccessComponent } from './components/admin/manage-system-access/manage-system-access.component';
 
@@ -17,9 +17,10 @@ const routes: Routes = [
   {path: 'payment', component: PaymentComponent},
   {path: 'assignment', component: AssignmentComponent},
   {path: '',
-   redirectTo: '/registparcel',
+   redirectTo: '/login',
    pathMatch:'full'
   },
+  { path: 'login', component:  LoginComponent},
   { path: 'ManageEmployees', component:  ManageEmployeesComponent},
   { path: 'ManageSystemAccess', component:  ManageSystemAccessComponent},
 ];
@@ -29,4 +30,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routesComponent = [ManageEmployeesComponent,ManageSystemAccessComponent,]
+export const routesComponent = [ManageEmployeesComponent,ManageSystemAccessComponent,LoginComponent,]
