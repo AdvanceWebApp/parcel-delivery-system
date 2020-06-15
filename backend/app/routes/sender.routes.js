@@ -18,7 +18,8 @@ module.exports = function (app) {
     SenderController.putSender); 
     app.delete('/sender/:Sid',[authJwt.verifyToken, authJwt.isRegisteredStaff],
     SenderController.deleteSenderById);
-  
+    app.post('/sender',[authJwt.verifyToken, authJwt.isRegisteredStaff],
+    SenderController.postSender); 
   }
 
 /*
