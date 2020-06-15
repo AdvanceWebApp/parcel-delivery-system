@@ -1,5 +1,6 @@
+const config = require("../config/auth.config");
 const db = require("../models");
-const Sender = db.sender
+const Sender = db.sender;
 
 
 
@@ -38,7 +39,7 @@ exports.getSender = (req, res) => {
   };
 
 exports.postSender = (req, res) => {
-    var sender = new sender({
+  const sender = new Sender({
         name: req.body.name,
         phone: req.body.phone,
         publicId: req.body.publicId,
@@ -46,16 +47,16 @@ exports.postSender = (req, res) => {
         district: req.body.district,
         county: req.body.county
     })
-    register.save((err, sender) => {
+    console.log(sender)
+    sender.save((err, sender) => {
+      console.log("seve")
         if (err) {
             res.status(500).send({ message: err });
             return;
         }
-
         if (!sender) {
             return res.status(404).send({ message: "Sender Not found." });
         }
-
         res.status(200).send(sender);
     });
   };

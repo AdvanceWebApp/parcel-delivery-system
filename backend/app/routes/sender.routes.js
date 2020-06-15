@@ -10,16 +10,15 @@ module.exports = function (app) {
       );
       next();
     });
-    app.get('/sender', [authJwt.verifyToken, authJwt.isRegisteredStaff],
+    app.get('/sender',
     SenderController.getSender);
-    app.get('/sender/:Sid', [authJwt.verifyToken, authJwt.isRegisteredStaff],
+    app.get('/sender/:Sid',
     SenderController.getSenderId);
-    app.put('/sender', [authJwt.verifyToken, authJwt.isRegisteredStaff],
+    app.put('/sender',
     SenderController.putSender); 
-    app.delete('/sender/:Sid',[authJwt.verifyToken, authJwt.isRegisteredStaff],
+    app.delete('/sender/:Sid',
     SenderController.deleteSenderById);
-    app.post('/sender',[authJwt.verifyToken, authJwt.isRegisteredStaff],
-    SenderController.postSender); 
+    app.post('/sender',SenderController.postSender); 
   }
 
 /*
