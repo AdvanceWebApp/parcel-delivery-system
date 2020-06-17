@@ -5,11 +5,103 @@
     </h5>
   </div>
   <div class="card-body">
-    <label for="searching" style="margin-left: 220px;"><i class="fa fa-truck" aria-hidden="true"></i> ติดตามพัสดุ</label>
-    <form class="form-inline" >
-      <input id="searching" class="form-control col-md-6" style="margin-left: 220px;" type="search" placeholder="ID Parcal" aria-label="Search">
+    <label for="searching" style="margin-left: 220px;"><i class="fa fa-truck" aria-hidden="true"></i>
+      ติดตามพัสดุ</label>
+    <form class="form-inline">
+      <input id="searching" class="form-control col-md-6" style="margin-left: 220px;" type="search"
+        placeholder="ID Parcal" aria-label="Search">
       &nbsp;&nbsp;
-      <button class="btn btn-outline-success my-2 my-sm-0"type="submit">ค้นหา</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#stateModel" >ค้นหา</button>
     </form>
+  </div>
+
+  <div class="modal fade" id="stateModel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-dark">
+        <!-- Modal Header -->
+        <div class="modal-header text-white">
+          <h4 class="modal-title">สถานะพัสดุ</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-header">
+              <h5>สถานะพัสดุ</h5>
+            </div>
+            <div class="card-body">
+              <form>
+
+                <div class="form-row">
+                  <div class="form-group col-md-2">
+                    <label for="inputState">คำนำหน้าชื่อ</label>
+                    <select id="inputState" class="form-control">
+                      <option selected></option>
+                      <option>นาย</option>
+                      <option>นางสาว</option>
+                      <option>นาง</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputNameS">ชื่อ-สกุล</label>
+                    <input type="email" class="form-control" id="inputNameS" placeholder="ชื่อ-สกุล">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputPhNS">เบอร์โทรศัพท์</label>
+                    <input type="password" class="form-control" id="inputPhNS" placeholder="เบอร์โทรศัพท์">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputPbcode">เลขประจําตัวประชาชน</label>
+                    <input type="email" class="form-control" id="inputPbcode" placeholder="เลขประจําตัวประชาชน">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputw">น้ำหนัก</label>
+                    <input class="form-control" type="number" value="" id="inputw">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">หน่วย</label>
+                    <select id="inputState" class="form-control">
+                      <option selected></option>
+                      <option>กรัม</option>
+                      <option>กิโลกรัม</option>
+                      <option>ตัน</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress">ที่อยู่</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-3">
+                    <label for="inputdas">ตำบล/แขวง</label>
+                    <input type="email" class="form-control" id="inputdas" placeholder="ตำบล/แขวง">
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputcounty">อำเภอ/เขต</label>
+                    <input type="email" class="form-control" id="inputcounty" placeholder="อำเภอ/เขต">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">จังหวัด</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputPostcode">รหัสไปรษณีย์</label>
+                    <input type="email" class="form-control" id="inputPostcode" placeholder="รหัสไปรษณีย์">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">ปิด</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

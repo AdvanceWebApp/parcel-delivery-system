@@ -40,5 +40,4 @@ module.exports = function (app) {
     controller.getUser);
   app.put('/api/registered/putRegistered', [authJwt.verifyToken, authJwt.isRegisteredStaff],
     controller.putUser); 
-
 }
