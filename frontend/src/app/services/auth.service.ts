@@ -17,10 +17,8 @@ export class AuthService {
   signIn(authData: any){
     return this.http.post<any>('http://localhost:8080/api/auth/signin',authData)
     .pipe(map(data=>{
-      console.log("data"+" "+data)
       if(data){
         this.local.set('auth',data, 1, 'w');
-        // console.log(this.local.get('token'));
         this.key = data.accessToken;
       }
       return data;
