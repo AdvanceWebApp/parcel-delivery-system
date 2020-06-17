@@ -30,10 +30,10 @@
 
                         <tbody>
 
-                            <tr *ngFor="let item of packages">
+                            <tr *ngFor="let item of recives">
                                 <td scope="row">{{item.name}}</td>
                                 <td>{{item.city}}</td>
-                                <td>(state)</td>
+                                <td>{{regists[0].state}}</td>
                                 <td>
                                     <button type="button" class="btn btn-success" data-toggle="modal"
                                     data-target="#packageStatus" (click)="clickConfirm()">
@@ -82,60 +82,6 @@
                                 </td>
                             </tr>
                         </tbody>
-                        
-                        
-
-                        <!-- <tbody>
-                            <tr *ngFor="let item of packages">
-                                <td scope="row">{{item.name}}</td>
-                                <td>{{item.city}}</td>
-                                <td>(state)</td>
-                                <td><button type="button" class="btn btn-success" data-toggle="modal"
-                                    data-target="#packageStatus" (click)="clickConfirm()">
-                                    <i class="fa fa-check text-white" aria-hidden="true"></i>
-                                    </button>&nbsp;
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        (click)="clickCancel()" data-target="#packageStatus">
-                                        <i class="fa fa-times text-white" aria-hidden="true"></i>
-                                    </button>&nbsp;
-                                    <button type="button" class="btn btn-dark" data-toggle="modal"
-                                        (click)="getArray(item)" data-target="#staticBackdrop">
-                                        <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                    </button>
-                                
-
-                            <div class="modal fade" id="staticBackdrop" data-backdrop="static"
-                            data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="media">
-                                        <div class="modal-body">
-                                        <br>
-                                            <h2 class="text-dark text-center">ข้อมูลพัสดุ</h2>
-                                            <br>
-                                            <div class="card bg-light mb-3" style="max-width: 50rem;">
-                                            <br>
-                                                <h6 class="card-text">&nbsp;ชื่อผู้รับ: {{i.name}}</h6>
-                                                <h6 class="card-text">&nbsp;เบอร์: {{i.phone}}</h6>
-                                                <h6 class="card-text">&nbsp;ที่อยู่ปลายทาง: {{i.address}} &nbsp; 
-                                                    {{i.district}} &nbsp; {{i.county}} &nbsp; {{i.city}} &nbsp; {{i.postCode}}</h6>
-                                                <br>
-                                            </div>
-                                        </div>
- 
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary-text"
-                                            data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                    </td>
-                            </tr>
-                        </tbody> -->
-
-                        
                     </table>
                 </div>
             </div>
