@@ -17,6 +17,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { ShowprofileComponent } from './components/postman/showprofile/showprofile.component';
 import { ShowpackageComponent } from './components/postman/showpackage/showpackage.component';
 
+import {UserComponent} from './components/user/user.component'
 const routes: Routes = [
   {path: 'registparcel', component : RegistParcelComponent ,canActivate: [AuthGuardService]},
   {path: 'trackpackage', component: TrackPackageComponent ,canActivate: [AuthGuardService]},
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'ManageEmployees', component:  ManageEmployeesComponent ,canActivate: [AuthGuardService]},
   { path: 'ManageSystemAccess', component:  ManageSystemAccessComponent ,canActivate: [AuthGuardService]},
   { path: 'showprofile', component:  ShowprofileComponent ,canActivate: [AuthGuardService]},
-  { path: 'showpackage', component:  ShowpackageComponent ,canActivate: [AuthGuardService]}
+  { path: 'showpackage', component:  ShowpackageComponent ,canActivate: [AuthGuardService]},
+  { path: 'PendingApproval', component:  UserComponent ,canActivate: [AuthGuardService]}
 ];
 
 @NgModule({
