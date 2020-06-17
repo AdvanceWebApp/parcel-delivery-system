@@ -3,37 +3,37 @@ const mongoose = require("mongoose");
 const Recive = mongoose.model(
   "Recive",
   new mongoose.Schema({
-    name: {
+    nameR: {
       type: String,
       required: true
     },
-    phone: {
+    phoneR: {
       type: String,
       required: true
     },
-    address: {
+    addressR: {
       type: String,
       required: true
     },
-    district: {
+    districtR: {
         type: String,
         required: true
       },
-    county: {
+    countyR: {
         type: String,
         required: true
     },
-    postCode: {
+    postCodeR: {
       type: String,
       required: true
     },
-    city : {
+    cityR : {
       type: String,
       required: true,
       enum: ["กรุงเทพ", "กระบี่", "กาฬสิน"],
       default: "กรุงเทพ",
     },
-    prefix : {
+    prefixR : {
       type: String,
       required: true,
       enum: ["นาย", "นาง", "นางสาว","เด็กชาย","เด็กหญิง"],

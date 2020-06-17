@@ -43,9 +43,26 @@ exports.getRegistparcel = (req, res) => {
 exports.postRegistparcel = (req, res) => {
   const registparcel = new Registparcel({
         state: req.body.state,
-        recive: req.body.recive,
-        sender: req.body.sender,
-        user: req.body.user
+        nameS: req.body.nameS,
+        phoneS: req.body.phoneS,
+        publicIdS:  req.body.publicIdS,
+        addressS: req.body.addressS,
+        weigthS:req.body.weigthS,
+        districtS: req.body.districtS,
+        countyS:req.body.countyS,
+        postCodeS:req.body.postCodeS,
+        unitS:req.body.unitS,
+        cityS :req.body.cityS,
+        prefixS :req.body.prefixS,
+        nameR:req.body.nameR,
+        phoneR:req.body.phoneR,
+        addressR:req.body.addressR,
+        districtR:req.body.districtR,
+        countyR:req.body.countyR,
+        postCodeR:req.body.postCodeR,
+        cityR :req.body.cityR,
+        prefixR :req.body.prefixR,
+
     })
     console.log(registparcel)
     registparcel.save((err, registparcel) => {

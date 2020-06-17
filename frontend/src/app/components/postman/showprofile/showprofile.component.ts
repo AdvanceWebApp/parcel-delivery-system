@@ -17,7 +17,7 @@ export class ShowprofileComponent implements OnInit {
 
   profile: any=[]
 
-  constructor(private pf: ProfileService, private router: Router) { 
+  constructor(private pf: ProfileService, private router: Router) {
     this.onLoadingProfile();
   }
 
@@ -43,18 +43,20 @@ export class ShowprofileComponent implements OnInit {
   get(){
     console.log('get')
   }
-  
+
   itemAdd(profile){
     if(this.profile != profile){
       this.profile = profile
     console.log(this.profile);
     }
   }
+
+
   put(){
 
 
     console.log('add')
- 
+
     console.log(this.profile.ID_Employees)
     console.log(this.profile.firstName)
     console.log(this.profile.lastName)

@@ -3,43 +3,47 @@ const mongoose = require("mongoose");
 const Sender = mongoose.model(
   "Sender",
   new mongoose.Schema({
-    name: {
+    names: {
       type: String,
       required: true
     },
-    phone: {
+    phones: {
       type: String,
       required: true
     },
-    address: {
+    addressS: {
       type: String,
       required: true
     },
-    district: {
+    publicIdS:{
+      type: String,
+      required: true
+    },
+    districts: {
         type: String,
         required: true
       },
-    county: {
+    countys: {
         type: String,
         required: true
     },
-    postCode: {
+    postCodes: {
       type: String,
       required: true
     },
-    unit: {
+    units: {
       type: String,
       required: true,
       enum: ["กรัม", "กิโลกรัม", "ตัน"],
       default: "กรัม",
     },
-    city : {
+    citys : {
       type: String,
       required: true,
       enum: ["กรุงเทพ", "กระบี่", "กาฬสิน"],
       default: "กรุงเทพ",
     },
-    prefix : {
+    prefixs : {
       type: String,
       required: true,
       enum: ["นาย", "นาง", "นางสาว","เด็กชาย","เด็กหญิง"],
