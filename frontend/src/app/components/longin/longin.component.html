@@ -1,0 +1,76 @@
+<br><br><br>
+<div class="container">
+    <div class="card card-container">
+    
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+        
+        <form class="form-signin" [formGroup]="autForm">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Username" required autofocus formControlName="username">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required  formControlName="password">
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="button" (click)="signin()" >Sign in</button>
+        </form>
+          
+    
+            <a href="#" class="button" data-target="#staticBackdrop" type="button" data-toggle="modal">
+                Do you have a password?
+            </a>
+
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static"
+                    data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+            
+                    <div class="modal-dialog modal-content card card-container ">
+                    
+                     
+                            
+                                <div class="modal-body">
+                  
+
+                               <h2 class="text-dark text-center">Register</h2><br>
+                                    <form [formGroup]="signupForm">
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Username" formControlName="username">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="First name" formControlName="firstName">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Last name" formControlName="lastName">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password">
+                                        </div>
+                                    </div>
+                                    
+                                </form>
+<br>
+                                <div class="text-center modal-footer" >
+                                    <button type="submit" class="btn btn-success" (click)="signUp()">Sign Up</button>
+                                    <button type="button" class="btn btn-secondary-text"
+                                    data-dismiss="modal">Close</button>
+                                </div> 
+
+                                </div>
+                            </div>
+                            </div>  
+</div>
