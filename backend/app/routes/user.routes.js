@@ -34,7 +34,7 @@ module.exports = function (app) {
     controller.putUser);
 
   // TODO : REGISTERED STAFF
-  app.get('/api/registered/getAllByStaff', [authJwt.verifyToken, authJwt.isRegisteredStaff],
+  app.get('/api/registered/getAllByStaff',
     controller.getDeliveryAllByRegistered);
   app.get('/api/registered/getRegistered', [authJwt.verifyToken, authJwt.isRegisteredStaff],
     controller.getUser);
