@@ -12,6 +12,10 @@ export class AssignmentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get(){
+    console.log('get')
+  }
+
   /*regis: any = [
     { "sender_id": , "reciever_id": 1 },
     { "sender_id": 1, "reciever_id": 1 },

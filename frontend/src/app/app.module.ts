@@ -20,6 +20,7 @@ import { LonginComponent } from './components/longin/longin.component';
 import { ShowpackageComponent } from './components/postman/showpackage/showpackage.component';
 import { ShowprofileComponent } from './components/postman/showprofile/showprofile.component';
 import { NavbarComponent } from './components/postman/navbar/navbar.component';
+import { MynavbarComponent } from './components/assignment/mynavbar/mynavbar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NavbarComponent } from './components/postman/navbar/navbar.component';
     LonginComponent,
     ShowpackageComponent,
     ShowprofileComponent,
-    NavbarComponent
+    NavbarComponent,
+    MynavbarComponent
     
   ],
   imports: [

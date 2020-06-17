@@ -12,6 +12,10 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get(){
+    console.log('get')
+  }
+
   parcel: any=[
     {"id":"1", "weight":"500", "unit":"กรัม", "customer_name":"Prayuth juneiei", "tel":"044112555"},
     {"id":"2", "weight":"1.5", "unit":"กิโลกรัม", "customer_name":"Prawit naja", "tel":"099251615"},
