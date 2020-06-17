@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 
 import { RegistParcelComponent } from './components/regist-parcel/regist-parcel.component';
 import { TrackPackageComponent } from './components/track-package/track-package.component';
@@ -13,6 +13,10 @@ import { AssignmentComponent } from './components/assignment/assignment.componen
 import { ManageEmployeesComponent } from './components/admin/manage-employees/manage-employees.component';
 import { ManageSystemAccessComponent } from './components/admin/manage-system-access/manage-system-access.component';
 import { AdminNavbarComponent } from './components/admin/admin-navbar/admin-navbar.component';
+import { ShowprofileComponent } from './components/postman/showprofile/showprofile.component';
+import { NavbarComponent } from './components/postman/navbar/navbar.component';
+import { ShowpackageComponent } from './components/postman/showpackage/showpackage.component';
+
 
 @NgModule({
   declarations: [
@@ -23,12 +27,16 @@ import { AdminNavbarComponent } from './components/admin/admin-navbar/admin-navb
     AssignmentComponent,
     ManageEmployeesComponent,
     ManageSystemAccessComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    ShowpackageComponent,
+    ShowprofileComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
