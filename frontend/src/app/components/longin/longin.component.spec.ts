@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowpackageComponent } from './showpackage.component';
+import { LonginComponent } from './longin.component';
 
-describe('ShowpackageComponent', () => {
-  let component: ShowpackageComponent;
-  let fixture: ComponentFixture<ShowpackageComponent>;
+describe('LonginComponent', () => {
+  let component: LonginComponent;
+  let fixture: ComponentFixture<LonginComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowpackageComponent ]
+      declarations: [ LonginComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowpackageComponent);
+    fixture = TestBed.createComponent(LonginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

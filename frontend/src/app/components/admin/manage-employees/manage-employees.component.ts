@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-employees.component.css']
 })
 export class ManageEmployeesComponent implements OnInit {
-
  
-  items: any = [
-    {id: '1', ID_Employees: 'B1111111',firstName: 'Nopparat', lastName: 'Waoram', email: 'arm.noparat@gmail.com', position: 'พนักงานลงทะเบียนพัสดุ'},
-    {id: '2', ID_Employees: 'B2222222',firstName: 'arm', lastName: 'noparat', email: 'noparat@gmail.com' ,position: 'พนักงานส่งพัสดุ'}
-  ]
-  item: any=[]
+  // items: any = [
+  //   {id: '1', ID_Employees: 'B1111111',firstName: 'Nopparat', lastName: 'Waoram', email: 'arm.noparat@gmail.com', position: 'พนักงานลงทะเบียนพัสดุ'},
+  //   {id: '2', ID_Employees: 'B2222222',firstName: 'arm', lastName: 'noparat', email: 'noparat@gmail.com' ,position: 'พนักงานส่งพัสดุ'}
+  // ]
+  items: any
+  item: any
   positions: any =['','พนักงานลงทะเบียนพัสดุ','พนักงานส่งพัสดุ']
   
   constructor() { 
@@ -25,15 +25,16 @@ export class ManageEmployeesComponent implements OnInit {
   get(){
     console.log('get')
   }
+
   itemAdd(item){
     if(this.item != item){
       this.item = item
     console.log(this.item);
     }
   }
+
   put(){
     console.log('add')
- 
     console.log(this.item.id)
     console.log(this.item.ID_Employees)
     console.log(this.item.firstName)
