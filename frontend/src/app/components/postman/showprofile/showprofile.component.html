@@ -28,11 +28,8 @@
   <br>
     <div class="row">
         <div class="center">
-            <ul class="list-group" *ngFor="let pf of profiles">
+            <ul class="list-group" *ngFor="let pf of profile">
                 
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Employee ID:</strong></span> 
-                    <input type="text" class="form-control" [(ngModel)]='pf.ID_Employees'>
-                </li>
 
                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">First Name: </strong></span>
                     <input type="text" class="form-control" [(ngModel)]='pf.firstName'>
@@ -63,7 +60,6 @@
                             </div>
 
                             <ul class="list-group">
-                                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Employee ID: </strong></span>{{pf.ID_Employees}}</li>
                                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Fisrt Name: </strong></span>{{pf.firstName}}</li>
                                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last Name: </strong></span>{{pf.lastName}}</li>
                                 <li class="list-group-item text-right"><span class="pull-left"><strong class="">Email: </strong></span>{{pf.email}}</li>
