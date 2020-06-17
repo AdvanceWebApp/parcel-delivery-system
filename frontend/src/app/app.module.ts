@@ -21,6 +21,7 @@ import { ShowpackageComponent } from './components/postman/showpackage/showpacka
 import { ShowprofileComponent } from './components/postman/showprofile/showprofile.component';
 import { NavbarComponent } from './components/postman/navbar/navbar.component';
 import { MynavbarComponent } from './components/assignment/mynavbar/mynavbar.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MynavbarComponent } from './components/assignment/mynavbar/mynavbar.com
     ShowpackageComponent,
     ShowprofileComponent,
     NavbarComponent,
-    MynavbarComponent
+    MynavbarComponent,
+    UserComponent
     
   ],
   imports: [

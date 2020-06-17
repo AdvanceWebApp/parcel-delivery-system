@@ -96,7 +96,7 @@ export class LonginComponent implements OnInit {
     this.router.navigate(['/showpackage'])
   }
   routerUser(){
-    this.router.navigate(['/ManageEmployees'])
+    this.router.navigate(['/PendingApproval'])
   }
  
 }
