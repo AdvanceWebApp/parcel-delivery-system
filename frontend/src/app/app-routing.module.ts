@@ -10,6 +10,10 @@ import { RegistParcelComponent } from './components/regist-parcel/regist-parcel.
 import { TrackPackageComponent } from './components/track-package/track-package.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { AssignmentComponent } from './components/assignment/assignment.component';
+import { ShowprofileComponent } from './components/postman/showprofile/showprofile.component';
+import { ShowpackageComponent } from './components/postman/showpackage/showpackage.component';
+
+
 
 const routes: Routes = [
   {path: 'registparcel', component : RegistParcelComponent},
@@ -23,6 +27,8 @@ const routes: Routes = [
   { path: 'login', component:  LoginComponent},
   { path: 'ManageEmployees', component:  ManageEmployeesComponent},
   { path: 'ManageSystemAccess', component:  ManageSystemAccessComponent},
+  { path: 'showpackage', component: ShowpackageComponent},
+  { path: 'showprofile', component: ShowprofileComponent}
 ];
 
 @NgModule({
