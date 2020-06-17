@@ -1,0 +1,238 @@
+<app-navbar></app-navbar>
+<br /><br />
+
+<div class="row">
+    <div class="col">
+        <div class="container-md">
+            <div class="card">
+
+
+                <div class="card-header">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <h1 class="">พัสดุเตรียมนำจำหน่าย</h1>
+                        </div>
+
+                    </div>
+
+                    <br>
+                    <table class="table table-striped table-inverse">
+                        <thead class="thead-inverse text-light bg-secondary">
+                            <tr>
+                                <th>ชื่อผู้รับ</th>
+                                <th>จังหวัดปลายทาง</th>
+                                <th>สถานะการจำหน่าย</th>
+                                <th>ตัวเลือก</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr *ngFor="let item of packages">
+                                <td scope="row">{{item.name}}</td>
+                                <td>{{item.city}}</td>
+                                <td>(state)</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" data-toggle="modal"
+                                    data-target="#packageStatus" (click)="clickConfirm()">
+                                    <i class="fa fa-check text-white" aria-hidden="true"></i>
+                                    </button>&nbsp;
+                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                        (click)="clickCancel()" data-target="#packageStatus">
+                                        <i class="fa fa-times text-white" aria-hidden="true"></i>
+                                    </button>&nbsp;
+                                    <button type="button" class="btn btn-dark" data-toggle="modal"
+                                        (click)="getArray(item)" data-target="#staticBackdrop">
+                                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                    </button>
+
+                            
+                        
+                        
+                                    <div class="modal fade" id="staticBackdrop" data-backdrop="static"
+                                        data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="media">
+                                                    <div class="modal-body">
+                                                    <br>
+                                                    <h2 class="text-dark text-center">ข้อมูลพัสดุ</h2>
+                                                    <br>
+                                                        <div class="card bg-light mb-3" style="max-width: 50rem;">
+                                                        <br>
+                                                        <h6 class="card-text">&nbsp;ชื่อผู้รับ: {{name}}</h6>
+                                                        <h6 class="card-text">&nbsp;เบอร์: {{phone}}</h6>
+                                                        <h6 class="card-text">&nbsp;ที่อยู่ปลายทาง: {{address}} &nbsp; 
+                                                            {{district}} &nbsp; {{county}} &nbsp; {{city}} &nbsp; {{postCode}}</h6>
+                                                        <br>
+                                                        </div>
+                                                    </div>
+ 
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary-text"
+                                                        data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                </td>
+                            </tr>
+                        </tbody>
+                        
+                        
+
+                        <!-- <tbody>
+                            <tr *ngFor="let item of packages">
+                                <td scope="row">{{item.name}}</td>
+                                <td>{{item.city}}</td>
+                                <td>(state)</td>
+                                <td><button type="button" class="btn btn-success" data-toggle="modal"
+                                    data-target="#packageStatus" (click)="clickConfirm()">
+                                    <i class="fa fa-check text-white" aria-hidden="true"></i>
+                                    </button>&nbsp;
+                                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                                        (click)="clickCancel()" data-target="#packageStatus">
+                                        <i class="fa fa-times text-white" aria-hidden="true"></i>
+                                    </button>&nbsp;
+                                    <button type="button" class="btn btn-dark" data-toggle="modal"
+                                        (click)="getArray(item)" data-target="#staticBackdrop">
+                                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                    </button>
+                                
+
+                            <div class="modal fade" id="staticBackdrop" data-backdrop="static"
+                            data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="media">
+                                        <div class="modal-body">
+                                        <br>
+                                            <h2 class="text-dark text-center">ข้อมูลพัสดุ</h2>
+                                            <br>
+                                            <div class="card bg-light mb-3" style="max-width: 50rem;">
+                                            <br>
+                                                <h6 class="card-text">&nbsp;ชื่อผู้รับ: {{i.name}}</h6>
+                                                <h6 class="card-text">&nbsp;เบอร์: {{i.phone}}</h6>
+                                                <h6 class="card-text">&nbsp;ที่อยู่ปลายทาง: {{i.address}} &nbsp; 
+                                                    {{i.district}} &nbsp; {{i.county}} &nbsp; {{i.city}} &nbsp; {{i.postCode}}</h6>
+                                                <br>
+                                            </div>
+                                        </div>
+ 
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary-text"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                    </td>
+                            </tr>
+                        </tbody> -->
+
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <tbody>
+    <tr *ngFor="let itemt of items">
+
+        <td scope="row">{{itemt.ID_Employees}}</td>
+        <td>{{itemt.firstName}}</td>
+        <td>{{itemt.lastName}}</td>
+        <td>{{itemt.position}}</td>
+        <td>
+
+            <button type="button" class="btn btn-warning" data-toggle="modal"
+                data-target="#staticBackdrop" (click)="itemAdd(itemt)">
+                <i class="fa fa-pencil text-white" aria-hidden="true"></i>
+            </button>
+
+            <button type="button" class="btn btn-danger" data-toggle="modal"
+                (click)="deletes(itemt.id)">
+                <i class="fa fa-trash text-white" aria-hidden="true"></i>
+            </button>
+
+
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static"
+                data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            
+                            <div class="modal-body">
+                                <h2>Edit employee information</h2>
+                            <br>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">ID_Employee</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"
+                                            [(ngModel)]='item.ID_Employees'>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">FirstName</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"
+                                            [(ngModel)]='item.firstName'>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">LastName</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"
+                                            [(ngModel)]='item.lastName'>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"
+                                            [(ngModel)]='item.email'>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Position</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control"
+                                            [(ngModel)]='item.position'>
+                                            <option *ngFor="let item of positions">
+                                                {{item}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal"
+                                (click)="put()">confirm</button>
+                            <button type="button" class="btn btn-secondary-text"
+                                data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </td>
+    </tr>
+</tbody>
+
+
+
+ -->
+

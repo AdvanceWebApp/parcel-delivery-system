@@ -14,6 +14,8 @@ import { AssignmentComponent } from './components/assignment/assignment.componen
 
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { ShowprofileComponent } from './components/postman/showprofile/showprofile.component';
+import { ShowpackageComponent } from './components/postman/showpackage/showpackage.component';
 
 const routes: Routes = [
   {path: 'registparcel', component : RegistParcelComponent ,canActivate: [AuthGuardService]},
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'login', component:  LonginComponent },
   { path: 'ManageEmployees', component:  ManageEmployeesComponent ,canActivate: [AuthGuardService]},
   { path: 'ManageSystemAccess', component:  ManageSystemAccessComponent ,canActivate: [AuthGuardService]},
+  { path: 'showprofile', component:  ShowprofileComponent ,canActivate: [AuthGuardService]},
+  { path: 'showpackage', component:  ShowpackageComponent ,canActivate: [AuthGuardService]}
 ];
 
 @NgModule({

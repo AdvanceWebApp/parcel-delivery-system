@@ -1,0 +1,137 @@
+<app-navbar></app-navbar>
+<br /><br />
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+    .center {
+      margin: auto;
+      width: 60%;
+      padding: 10px;
+    }
+</style>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container target">
+    <div class="row">
+        <div class="col-sm-10">
+            <br>
+            <h1 class="">Edit Profile</h1>
+            <br>
+        </div>
+      
+
+    </div>
+</div>
+  <br>
+    <div class="row">
+        <div class="center">
+            <ul class="list-group" *ngFor="let pf of profiles">
+                
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Employee ID:</strong></span> 
+                    <input type="text" class="form-control" [(ngModel)]='pf.ID_Employees'>
+                </li>
+
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">First Name: </strong></span>
+                    <input type="text" class="form-control" [(ngModel)]='pf.firstName'>
+                </li>
+
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last Name: </strong></span>
+                    <input type="text" class="form-control" [(ngModel)]='pf.lastName'>
+                </li>
+                <!-- <li class="list-group-item text-right"><span class="pull-left"><strong class="">Address: </strong></span> </li> -->
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Email: </strong></span>
+                    <input type="text" class="form-control" [(ngModel)]='pf.email'>
+                </li>
+                <!-- <li class="list-group-item text-muted" contenteditable="false"></li> -->
+                <!-- <li class="list-group-item text-right"><span class="pull-left"><strong class="">Tel: </strong></span></li> -->
+                <li class="list-group-item text-right text-muted" contenteditable="false"><span class="pull-left"><strong class=""></strong></span>
+                    <button type="button" class="btn btn-success" (click)="put()"
+                    data-toggle="modal" data-target="#staticBackdrop">Save</button>
+                </li>
+                
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static"
+                data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+
+                            <div class="modal-body">
+                                <h2 align="center">บันทึกข้อมูลสำเร็จ</h2>
+                            </div>
+
+                            <ul class="list-group">
+                                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Employee ID: </strong></span>{{pf.ID_Employees}}</li>
+                                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Fisrt Name: </strong></span>{{pf.firstName}}</li>
+                                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last Name: </strong></span>{{pf.lastName}}</li>
+                                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Email: </strong></span>{{pf.email}}</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary-text"
+                                data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            </ul>
+            
+        </div>
+</div>
+<!-- <div class="modal fade" id="staticBackdrop" data-backdrop="static"
+                data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="modal-body">
+                            <h2>Edit Infomation</h2>
+                            <br>
+                                <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">ID_Employee</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"
+                                            [(ngModel)]='profile.ID_Employees'>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">FirstName</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"
+                                            [(ngModel)]='profile.firstName'>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">LastName</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"
+                                            [(ngModel)]='profile.lastName'>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"
+                                            [(ngModel)]='profile.email'>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal"
+                                (click)="put()">confirm</button>
+                            <button type="button" class="btn btn-secondary-text"
+                                data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->

@@ -17,6 +17,9 @@ import { AdminNavbarComponent } from './components/admin/admin-navbar/admin-navb
 
 import { AngularWebStorageModule } from 'angular-web-storage';
 import { LonginComponent } from './components/longin/longin.component';
+import { ShowpackageComponent } from './components/postman/showpackage/showpackage.component';
+import { ShowprofileComponent } from './components/postman/showprofile/showprofile.component';
+import { NavbarComponent } from './components/postman/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { LonginComponent } from './components/longin/longin.component';
     ManageEmployeesComponent,
     ManageSystemAccessComponent,
     AdminNavbarComponent,
-    LonginComponent
+    LonginComponent,
+    ShowpackageComponent,
+    ShowprofileComponent,
+    NavbarComponent
     
   ],
   imports: [
