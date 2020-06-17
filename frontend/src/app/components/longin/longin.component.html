@@ -3,8 +3,9 @@
     <div class="card card-container">
     
         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-        <p id="profile-name" class="profile-name-card"></p>
         
+<h4 class="text-center">Parcel Delivery System</h4> 
+<p id="profile-name" class="profile-name-card"></p>       
         <form class="form-signin" [formGroup]="autForm">
             <span id="reauth-email" class="reauth-email"></span>
             <input type="email" id="inputEmail" class="form-control" placeholder="Username" required autofocus formControlName="username">
@@ -55,17 +56,11 @@
                                             <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password">
                                         </div>
                                     </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col">
-                                            <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password">
-                                        </div>
-                                    </div>
-                                    
+                                   
                                 </form>
 <br>
-                                <div class="text-center modal-footer" >
-                                    <button type="submit" class="btn btn-success" (click)="signUp()">Sign Up</button>
+                                <div class="modal-footer" >
+                                    <button type="submit" class="btn btn-success" (click)="signUp()" data-dismiss="modal">Sign Up</button>
                                     <button type="button" class="btn btn-secondary-text"
                                     data-dismiss="modal">Close</button>
                                 </div> 

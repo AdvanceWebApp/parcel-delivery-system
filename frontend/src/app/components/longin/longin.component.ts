@@ -31,7 +31,6 @@ export class LonginComponent implements OnInit {
     roles:new FormControl('user'),
   })
 
-
   datas : any
   signin(){
     console.log(this.autForm.value)
