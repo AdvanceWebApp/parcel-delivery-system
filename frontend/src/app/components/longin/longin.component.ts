@@ -78,6 +78,7 @@ export class LonginComponent implements OnInit {
       data=>{
         alert('Successfully')
         this.signupForm.reset();
+        window.location.reload();
       },
       err=>{
         alert(err)

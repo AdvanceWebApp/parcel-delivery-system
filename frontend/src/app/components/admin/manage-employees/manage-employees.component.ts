@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiUserService} from '../../../services/api-user.service'
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-manage-employees',
   templateUrl: './manage-employees.component.html',
@@ -75,8 +76,16 @@ export class ManageEmployeesComponent implements OnInit {
     this.deletes(this.item.id)
   }
 
+  
+  DeleteForm = new FormGroup({
+    id : new FormControl('')
+  })
+
   deletes(id){
-    console.log('delete')
     console.log(id)
-  }
+    this.api.DeleteReg(id).subscribe()
+    window.location.reload();
+    }
+
+  
 }
