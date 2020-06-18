@@ -54,10 +54,8 @@ export class ShowprofileComponent implements OnInit {
 
   put(){
 
-
     console.log('add')
 
-    console.log(this.profile.ID_Employees)
     console.log(this.profile.firstName)
     console.log(this.profile.lastName)
     console.log(this.profile.email)

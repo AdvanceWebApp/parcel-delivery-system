@@ -28,7 +28,7 @@ export class ShowpackageComponent implements OnInit {
   constructor(private ps:PackageService, private router: Router) {
     this.onLoadingAssign();
     this.onLoadingRegist();
-    this.onLoadingRecieve();
+    // this.onLoadingRecieve();
     // this.get();
   }
 
@@ -60,7 +60,7 @@ export class ShowpackageComponent implements OnInit {
       this.ps.getRegists().subscribe(
         data => {
           this.regists = data;
-          this.getRecieve();
+          // this.getRecieve();
         },
         err => {
           console.log(err)
@@ -104,43 +104,61 @@ export class ShowpackageComponent implements OnInit {
   }
 
   getArray(item){
-    this.name = item.name;
-    this.phone = item.phone;
-    this.address = item.address; 
-    this.district = item.district;
-    this.county = item.county;
-    this.city = item.city; 
-    this.postCode = item.postCode;
+    
+    this.name = item.nameR;
+    this.phone = item.phoneR;
+    this.address = item.addressR; 
+    this.district = item.districtR;
+    this.county = item.countyR;
+    this.city = item.cityR; 
+    this.postCode = item.postCodeR;
   }
 
-  // registFormConfirm = new FormGroup({
-  //   state: new FormControl(''),
-  //   recive: new FormControl(''),
-  //   sender: new FormControl(''),
-  //   user: new FormControl(''),
-  //   created_at: new FormControl(''),
-  //   updated_at: new FormControl(''),
-  // })
-
-  // clickConfirm(){
-  //   console.log(this.registFormConfirm.value)    
-  //   this.ps.putConfirm(this.registFormConfirm.value).subscribe(
-  //     data=>{
-  //       alert('จัดส่งสำเร็จ')
-  //       this.registFormConfirm.reset();
-  //     },
-  //     err=>{
-  //       alert(err)
-  //     }
-  //   )
-  // }
+  registFormConfirm = new FormGroup({
+    state:new FormControl('จัดส่งสำเร็จ'),
+    nameS:new FormControl(''),
+    phoneS:new FormControl(''),
+    publicIdS:new FormControl(''),
+    addressS:new FormControl(''),
+    weigthS:new FormControl(''),
+    districtS:new FormControl(''),
+    countyS:new FormControl(''),
+    postCodeS:new FormControl(''),
+    unitS:new FormControl(''),
+    cityS:new FormControl(''),
+    prefixS:new FormControl(''),
+    nameR:new FormControl(''),
+    phoneR:new FormControl(''),
+    addressR:new FormControl(''),
+    districtR:new FormControl(''),
+    countyR:new FormControl(''),
+    postCodeR:new FormControl(''),
+    cityR:new FormControl(''),
+    prefixR:new FormControl(''),
+  })
+  
 
   clickConfirm(){
-    alert("จัดส่งสำเร็จ");
+    
+    console.log(this.registFormConfirm.value)    
+    this.ps.putConfirm(this.registFormConfirm.value).subscribe(
+      data=>{
+        alert('จัดส่งสำเร็จ')
+        this.registFormConfirm.reset();
+      },
+      err=>{
+        alert(console.log)
+      }
+    )
   }
 
-  clickCancel(){
-    alert("จัดส่งไม่สำเร็จ");
+  // clickConfirm(){
+  //   alert("จัดส่งสำเร็จ");
+  // }
+
+  clickCancel(id){
+    this.ps.DeleteReg(id).subscribe()
+    window.location.reload();
   }
 
 
