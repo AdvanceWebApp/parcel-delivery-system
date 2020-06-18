@@ -12,19 +12,19 @@ module.exports = function (app) {
 
   // TODO : USER
   // !! Pass
-  app.get('/api/user/getUser', [authJwt.verifyToken, authJwt.isUser],
+  app.get('/api/user/getUser',
     controller.getUser);
-  app.put('/api/user/putUser', [authJwt.verifyToken, authJwt.isUser],
+  app.put('/api/user/putUser', 
     controller.putUser);
 
   // TODO : ADMIN
-  app.get('/api/admin/getStaffAllByAdmin', [authJwt.verifyToken, authJwt.isAdmin],
+  app.get('/api/admin/getStaffAllByAdmin', 
     controller.getStaffAllByAdmin);
-  app.get('/api/admin/getUserAllByAdmin', [authJwt.verifyToken, authJwt.isAdmin],
+  app.get('/api/admin/getUserAllByAdmin', 
     controller.getUserAllByAdmin);  
-  app.put('/api/admin/putById/:_id',[authJwt.verifyToken, authJwt.isAdmin],
+  app.put('/api/admin/putById/:_id',
     controller.putById);
-  app.delete('/api/admin/deleteUserById/:_id', [authJwt.verifyToken, authJwt.isAdmin],
+  app.delete('/api/admin/deleteUserById/:_id', 
     controller.deleteUserById);
 
   // TODO : DELIVERY STAFF
@@ -36,7 +36,7 @@ module.exports = function (app) {
   // TODO : REGISTERED STAFF
   app.get('/api/registered/getAllByStaff',
     controller.getDeliveryAllByRegistered);
-  app.get('/api/registered/getRegistered', [authJwt.verifyToken, authJwt.isRegisteredStaff],
+  app.get('/api/registered/getRegistered', 
     controller.getUser);
   app.put('/api/registered/putRegistered', [authJwt.verifyToken, authJwt.isRegisteredStaff],
     controller.putUser); 
