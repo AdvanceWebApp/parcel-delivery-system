@@ -52,16 +52,21 @@ public role :any
     
   }
   
-  deleteUser(id: string):Observable<any>{   
-    console.log('deleteUser')
-    const url = 'http://localhost:8080/api/admin/deleteUserById/'+id
-    console.log(url)
-    return this.http.delete(url)
-    .pipe(map(data => {
-      if(data) { 
-        console.log(data);
-      }
-  }));
+  // deleteUser(id: string):Observable<any>{   
+  //   console.log('deleteUser')
+  //   const url = 'http://localhost:8080/api/admin/deleteUserById/'+id
+  //   console.log(url)
+  //   return this.http.delete(url)
+  //   .pipe(map(data => {
+  //     if(data) { 
+  //       console.log(data);
+  //     }
+  // }));
+  // }
+
+  DeleteReg(reg){
+    console.log(reg)
+    return this.http.delete<any>('http://localhost:8080/api/admin/deleteUserById/'+ reg)
   }
   
   

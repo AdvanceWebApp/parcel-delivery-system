@@ -159,6 +159,7 @@ REGForm = new FormGroup({
     this.DeleteForm=idedit._id
     console.log(this.DeleteForm)
     this.reg.DeleteReg(this.DeleteForm).subscribe()
+    window.location.reload();
     }
 
   }

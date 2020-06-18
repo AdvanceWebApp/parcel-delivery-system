@@ -86,11 +86,17 @@ export class ManageSystemAccessComponent implements OnInit {
     }
     
   }
+  
+  DeleteForm = new FormGroup({
+    id : new FormControl('')
+  })
+
+
   deletes(id){
-    console.log('delete')
     console.log(id)
-    
-    this.api.deleteUser(id)
-    
+  
+    this.api.DeleteReg(id).subscribe()
+    window.location.reload();    
+
   }
 }
