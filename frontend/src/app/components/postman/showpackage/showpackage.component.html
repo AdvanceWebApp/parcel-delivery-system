@@ -30,17 +30,17 @@
 
                         <tbody>
 
-                            <tr *ngFor="let item of recives">
-                                <td scope="row">{{item.name}}</td>
-                                <td>{{item.city}}</td>
-                                <td>{{regists[0].state}}</td>
+                            <tr *ngFor="let item of regists">
+                                <td scope="row">{{item.nameR}}</td>
+                                <td>{{item.cityR}}</td>
+                                <td>{{item.state}}</td>
                                 <td>
                                     <button type="button" class="btn btn-success" data-toggle="modal"
                                     data-target="#packageStatus" (click)="clickConfirm()">
                                     <i class="fa fa-check text-white" aria-hidden="true"></i>
                                     </button>&nbsp;
                                     <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        (click)="clickCancel()" data-target="#packageStatus">
+                                        (click)="clickCancel(item._id)" data-target="#packageStatus">
                                         <i class="fa fa-times text-white" aria-hidden="true"></i>
                                     </button>&nbsp;
                                     <button type="button" class="btn btn-dark" data-toggle="modal"
@@ -65,7 +65,8 @@
                                                         <h6 class="card-text">&nbsp;ชื่อผู้รับ: {{name}}</h6>
                                                         <h6 class="card-text">&nbsp;เบอร์: {{phone}}</h6>
                                                         <h6 class="card-text">&nbsp;ที่อยู่ปลายทาง: {{address}} &nbsp; 
-                                                            {{district}} &nbsp; {{county}} &nbsp; {{city}} &nbsp; {{postCode}}</h6>
+                                                            {{district}} &nbsp; {{county}} &nbsp; {{city}} &nbsp; 
+                                                            {{postCode}}</h6>
                                                         <br>
                                                         </div>
                                                     </div>
@@ -78,7 +79,6 @@
                                             </div>
                                         </div>
                                     </div>
-                        
                                 </td>
                             </tr>
                         </tbody>

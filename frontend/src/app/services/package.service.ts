@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -48,10 +49,29 @@ export class PackageService {
   }
 
   putConfirm(confirm){
-    return this.http.post<any>('http://localhost:8080/registparcel/putRegistparcel',confirm)
+    return this.http.put<any>('http://localhost:8080/registparcel/putRegistparcel',confirm)
     .pipe(map(data=>{
       return data;
     }));
+  }
+
+
+  deleteUser(id: string):Observable<any>{   
+    console.log('deleteUser')
+    const url = 'http://localhost:8080/api/admin/deleteUserById/'+id
+    console.log(url)
+    return this.http.delete(url)
+    .pipe(map(data => {
+      if(data) { 
+        console.log(data);
+      }
+  }));
+  }
+
+  DeleteReg(reg){
+
+    console.log(reg)
+    return this.http.delete<any>('http://localhost:8080/registparcel/'+ reg)
   }
 
 
