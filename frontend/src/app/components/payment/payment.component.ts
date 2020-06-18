@@ -34,6 +34,7 @@ export class PaymentComponent implements OnInit {
       this.ps.getRegist().subscribe(
         data => {
           this.regists = data;
+          this.item = this.regists;
         },
         err => {
           console.log(err)
