@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistserviceService } from 'src/app/services/registservice.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-regist-parcel',
@@ -19,7 +20,7 @@ export class RegistParcelComponent implements OnInit {
     this.onLoadingRecive();
     this.onLoadingSender();
     this.onLoadingUser();
-    
+
    }
    onLoadingRegist(){
     try {
@@ -82,6 +83,8 @@ export class RegistParcelComponent implements OnInit {
     }
   }
 
+  idedit:any=[];
+  idedits:any=[];
   name: String;
   phone: String;
   address: String;
@@ -89,6 +92,33 @@ export class RegistParcelComponent implements OnInit {
   county: String;
   city: String;
   postCode: String;
+
+  DeleteForm = new FormGroup({
+    id : new FormControl('')
+  })
+
+REGForm = new FormGroup({
+    state : new FormControl('ลงทะเบียนสำเร็จ'),
+    nameS : new FormControl(''),
+    phoneS: new FormControl(''),
+    publicIdS : new FormControl(''),
+    addressS : new FormControl(''),
+    weigthS: new FormControl(),
+    districtS:new FormControl(''),
+    countyS : new FormControl(''),
+    postCodeS : new FormControl(''),
+    unitS: new FormControl(''),
+    cityS:new FormControl(''),
+    prefixS: new FormControl(''),
+    nameR:new FormControl(''),
+    phoneR : new FormControl(''),
+    addressR : new FormControl(''),
+    districtR: new FormControl(''),
+    countyR:new FormControl(''),
+    postCodeR: new FormControl(''),
+    cityR:new FormControl(''),
+    prefixR : new FormControl(''),
+  })
 
   getArray(item){
     this.name = item.name;
@@ -100,8 +130,63 @@ export class RegistParcelComponent implements OnInit {
     this.postCode = item.postCode;
   }
 
+  clickEdit(idedit){
+    if(this.idedit != idedit){
+      this.idedit = idedit
+    console.log(this.idedit);
+    }
+
+  }
+
+  RegisterOK(){
+    console.log(this.REGForm)
+    console.log(this.REGForm.value)
+    this.reg.RegSave(this.REGForm.value).subscribe(
+      data=>{
+        alert('Successfully')
+        this.REGForm.reset();
+      },
+      err=>{
+        alert(err)
+      }
+    )
+  }
+
+  RegDelete(idedit){
+    if(this.idedit != idedit){
+      this.idedit = idedit
+    console.log(this.idedit);
+    this.DeleteForm=idedit._id
+    console.log(this.DeleteForm)
+    this.reg.DeleteReg(this.DeleteForm).subscribe()
+    }
+
+  }
+
+  EditReg(idedit){
+    if(this.idedit != idedit){
+      this.idedit = idedit
+    console.log(this.idedit);
+  }
+  }
+  // RegDelete(idedit){
+  //   console.log(this.idedit)
+  //   console.log(this.idedit.value)
+  //   this.reg.DeleteReg(this.idedit.value).subscribe(
+  //     data=> {
+  //       alert('Successfully')
+  //     },
+  //     err=>{
+  //       alert(err)
+  //     }
+  //   )
+  // }
+
+
 
   ngOnInit(): void {
   }
+
+
 
 }

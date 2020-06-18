@@ -65,5 +65,36 @@ export class RegistserviceService {
       return this.user;
     }));
   }
+  RegSave(reg){
+    console.log(reg)
+    return this.http.post<any>('http://localhost:8080/registparcel',reg)
+    .pipe(map(data=>{
+      return data;
+    }));
+  }
+
+  REGTrack(reg){
+    console.log(reg.id)
+    return this.http.get<any>('http://localhost:8080/registparcel/'+ reg.id)
+    .pipe(map(data=>{
+      return data;
+    }));
+  }
+
+  DeleteReg(reg){
+
+    console.log(reg)
+    return this.http.delete<any>('http://localhost:8080/registparcel/'+ reg)
+  }
+
+  EditReg(reg){
+    console.log(reg)
+    return this.http.put<any>('http://localhost:8080/registparcel',reg)
+    .pipe(map(data=>{
+      return data;
+    }));
+  }
+
+
 
 }

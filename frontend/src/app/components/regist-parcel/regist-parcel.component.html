@@ -24,9 +24,10 @@
           <td>{{item.nameS}}</td>
           <td>{{item.nameR}}</td>
           <td>
-            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#editModel"><i class="fa fa-edit"></i>
+            <button type="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#editModel"
+              (click)="clickEdit(item)"><i class="fa fa-edit"></i>
             </button>
-            <button type="button" class="btn btn-danger btn-circle" style="margin-left: 5px;"><i
+            <button type="button" class="btn btn-danger btn-circle" style="margin-left: 5px;" (click)="RegDelete(item)"><i
                 class="fa fa-trash"></i>
             </button>
           </td>
@@ -44,18 +45,17 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <!-- Modal body -->
+      <form [formGroup]="REGForm">
       <div class="modal-body">
         <div class="card">
           <div class="card-header">
             <h5>ข้อมูลผู้ส่ง</h5>
           </div>
           <div class="card-body">
-            <form>
-
               <div class="form-row">
                 <div class="form-group col-md-2">
                   <label for="inputState">คำนำหน้าชื่อ</label>
-                  <select id="inputState" class="form-control">
+                  <select id="inputState" class="form-control" formControlName="prefixS">
                     <option selected></option>
                     <option>นาย</option>
                     <option>นางสาว</option>
@@ -64,23 +64,23 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputEmail4">ชื่อ-สกุล</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="ชื่อ-สกุล">
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="ชื่อ-สกุล" formControlName="nameS">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputEmail4">เบอร์โทรศัพท์</label>
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="เบอร์โทรศัพท์">
+                  <input type="text" class="form-control" id="inputPassword4" placeholder="เบอร์โทรศัพท์" formControlName="phoneS">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputEmail4">เลขประจําตัวประชาชน</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="เลขประจําตัวประชาชน">
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="เลขประจําตัวประชาชน" formControlName="publicIdS">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputEmail4">น้ำหนัก</label>
-                  <input class="form-control" type="number" value="" id="example-number-input">
+                  <input class="form-control" type="number" value="" id="example-number-input" formControlName="weigthS">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputState">หน่วย</label>
-                  <select id="inputState" class="form-control">
+                  <select id="inputState" class="form-control" formControlName="unitS">
                     <option selected></option>
                     <option>กรัม</option>
                     <option>กิโลกรัม</option>
@@ -90,33 +90,67 @@
               </div>
               <div class="form-group">
                 <label for="inputAddress">ที่อยู่</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="addressS">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-3">
                   <label for="inputEmail4">ตำบล/แขวง</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="ตำบล/แขวง">
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="ตำบล/แขวง" formControlName="districtS">
                 </div>
                 <div class="form-group col-md-3">
                   <label for="inputEmail4">อำเภอ/เขต</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="อำเภอ/เขต">
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="อำเภอ/เขต" formControlName="countyS">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputState">จังหวัด</label>
-                  <select id="inputState" class="form-control">
+                  <select id="inputState" class="form-control" formControlName="cityS">
                     <option selected>Choose...</option>
-                    <option>...</option>
+                    <option>กรุงเทพมหานคร </option>
+                    <option>กระบี่ </option>
+                    <option>กาญจนบุรี </option>
+                    <option>กาฬสินธุ์ </option>
+                    <option>กำแพงเพชร </option>
+                    <option>ขอนแก่น </option>
+                    <option>จันทบุรี </option>
+                    <option>ฉะเชิงเทรา </option>
+                    <option>ชลบุรี </option>
+                    <option>ชัยนาท </option>
+                    <option>ชัยภูมิ </option>
+                    <option>ชุมพร </option>
+                    <option>เชียงราย </option>
+                    <option>เชียงใหม่ </option>
+                    <option>ตรัง </option>
+                    <option>ตราด </option>
+                    <option>ตาก </option>
+                    <option>นครนายก </option>
+                    <option>นครปฐม </option>
+                    <option>นครพนม </option>
+                    <option>นครราชสีมา </option>
+                    <option>นครศรีธรรมราช </option>
+                    <option>นครสวรรค์ </option>
+                    <option>นนทบุรี </option>
+                    <option>นราธิวาส </option>
+                    <option>น่าน </option>
+                    <option>บึงกาฬ </option>
+                    <option>บุรีรัมย์ </option>
+                    <option>ปทุมธานี </option>
+                    <option>ประจวบคีรีขันธ์ </option>
+                    <option>ปราจีนบุรี </option>
+                    <option>ปัตตานี </option>
+                    <option>พระนครศรีอยุธยา</option> 
+                    <option>พังงา </option>
+                    <option>พัทลุง </option>
+                    <option>พิจิตร </option>
+                    <option>พิษณุโลก </option>
+                    <option>เพชรบุรี </option>
+                    <option>เพชรบูรณ์ </option>
                   </select>
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="inputState">รหัสไปรษณีย์</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
+                  <label for="inputEmail4">รหัสไปรษณีย์</label>
+                  <input type="text" class="form-control" formControlName="postCodeS">
                 </div>
               </div>
-            </form>
           </div>
         </div>
         <div class="card" style="margin-top: 20px;">
@@ -124,12 +158,10 @@
             <h5>ข้อมูลผู้รับ</h5>
           </div>
           <div class="card-body">
-            <form>
-
               <div class="form-row">
                 <div class="form-group col-md-2">
                   <label for="inputState">คำนำหน้าชื่อ</label>
-                  <select id="inputState" class="form-control">
+                  <select id="inputState" class="form-control" formControlName="prefixR">
                     <option selected></option>
                     <option>นาย</option>
                     <option>นางสาว</option>
@@ -138,48 +170,83 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputEmail4">ชื่อ-สกุล</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="ชื่อ-สกุล">
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="ชื่อ-สกุล" formControlName="nameR">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputEmail4">เบอร์โทรศัพท์</label>
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="เบอร์โทรศัพท์">
+                  <input type="text" class="form-control" id="inputPassword4" placeholder="เบอร์โทรศัพท์" formControlName="phoneR">
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputAddress">ที่อยู่</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="addressR">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-3">
                   <label for="inputEmail4">ตำบล/แขวง</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="ตำบล/แขวง">
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="ตำบล/แขวง" formControlName="districtR">
                 </div>
                 <div class="form-group col-md-3">
                   <label for="inputEmail4">อำเภอ/เขต</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="อำเภอ/เขต">
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="อำเภอ/เขต" formControlName="countyR">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputState">จังหวัด</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
+                  <select id="inputState" class="form-control" formControlName="cityR">
+                    <option selected></option>
+                    <option>กรุงเทพมหานคร </option>
+                    <option>กระบี่ </option>
+                    <option>กาญจนบุรี </option>
+                    <option>กาฬสินธุ์ </option>
+                    <option>กำแพงเพชร </option>
+                    <option>ขอนแก่น </option>
+                    <option>จันทบุรี </option>
+                    <option>ฉะเชิงเทรา </option>
+                    <option>ชลบุรี </option>
+                    <option>ชัยนาท </option>
+                    <option>ชัยภูมิ </option>
+                    <option>ชุมพร </option>
+                    <option>เชียงราย </option>
+                    <option>เชียงใหม่ </option>
+                    <option>ตรัง </option>
+                    <option>ตราด </option>
+                    <option>ตาก </option>
+                    <option>นครนายก </option>
+                    <option>นครปฐม </option>
+                    <option>นครพนม </option>
+                    <option>นครราชสีมา </option>
+                    <option>นครศรีธรรมราช </option>
+                    <option>นครสวรรค์ </option>
+                    <option>นนทบุรี </option>
+                    <option>นราธิวาส </option>
+                    <option>น่าน </option>
+                    <option>บึงกาฬ </option>
+                    <option>บุรีรัมย์ </option>
+                    <option>ปทุมธานี </option>
+                    <option>ประจวบคีรีขันธ์ </option>
+                    <option>ปราจีนบุรี </option>
+                    <option>ปัตตานี </option>
+                    <option>พระนครศรีอยุธยา</option> 
+                    <option>พังงา </option>
+                    <option>พัทลุง </option>
+                    <option>พิจิตร </option>
+                    <option>พิษณุโลก </option>
+                    <option>เพชรบุรี </option>
+                    <option>เพชรบูรณ์ </option>
                   </select>
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="inputState">รหัสไปรษณีย์</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
+                  <label for="inputEmail4">รหัสไปรษณีย์</label>
+                  <input type="text" class="form-control" formControlName="postCodeR">
                 </div>
               </div>
-            </form>
           </div>
         </div>
       </div>
+    </form>
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">ลงทะเบียน</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal"(click)="RegisterOK()">ลงทะเบียน</button>
       </div>
     </div>
   </div>
@@ -201,11 +268,11 @@
           </div>
           <div class="card-body">
             <form>
-
               <div class="form-row">
                 <div class="form-group col-md-2">
                   <label for="inputState">คำนำหน้าชื่อ</label>
-                  <select id="inputState" class="form-control">
+                  <select id="inputState" class="form-control" [(ngModel)]='idedit.prefex'
+                    [ngModelOptions]="{standalone:true}">
                     <option selected></option>
                     <option>นาย</option>
                     <option>นางสาว</option>
@@ -213,20 +280,24 @@
                   </select>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="inputEmail4">ชื่อ-สกุล</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="ชื่อ-สกุล">
+                  <label for="inputname">ชื่อ-สกุล</label>
+                  <input type="text" class="form-control" [(ngModel)]='idedit.nameS'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputEmail4">เบอร์โทรศัพท์</label>
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="เบอร์โทรศัพท์">
+                  <input type="text" class="form-control" [(ngModel)]='idedit.phoneS'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputEmail4">เลขประจําตัวประชาชน</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="เลขประจําตัวประชาชน">
+                  <input type="text" class="form-control" [(ngModel)]='idedit.publicIdS'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputEmail4">น้ำหนัก</label>
-                  <input class="form-control" type="number" value="" id="example-number-input">
+                  <input class="form-control" type="number" [(ngModel)]='idedit.weigthS'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputState">หน่วย</label>
@@ -240,35 +311,75 @@
               </div>
               <div class="form-group">
                 <label for="inputAddress">ที่อยู่</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <input type="text" class="form-control" [(ngModel)]='idedit.addressS'
+                  [ngModelOptions]="{standalone:true}">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-3">
                   <label for="inputEmail4">ตำบล/แขวง</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="ตำบล/แขวง">
+                  <input type="email" class="form-control" [(ngModel)]='idedit.districtS'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
                 <div class="form-group col-md-3">
                   <label for="inputEmail4">อำเภอ/เขต</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="อำเภอ/เขต">
+                  <input type="email" class="form-control" [(ngModel)]='idedit.countyS'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputState">จังหวัด</label>
                   <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
+                    <option selected></option>
+                    <option>กรุงเทพมหานคร </option>
+                    <option>กระบี่ </option>
+                    <option>กาญจนบุรี </option>
+                    <option>กาฬสินธุ์ </option>
+                    <option>กำแพงเพชร </option>
+                    <option>ขอนแก่น </option>
+                    <option>จันทบุรี </option>
+                    <option>ฉะเชิงเทรา </option>
+                    <option>ชลบุรี </option>
+                    <option>ชัยนาท </option>
+                    <option>ชัยภูมิ </option>
+                    <option>ชุมพร </option>
+                    <option>เชียงราย </option>
+                    <option>เชียงใหม่ </option>
+                    <option>ตรัง </option>
+                    <option>ตราด </option>
+                    <option>ตาก </option>
+                    <option>นครนายก </option>
+                    <option>นครปฐม </option>
+                    <option>นครพนม </option>
+                    <option>นครราชสีมา </option>
+                    <option>นครศรีธรรมราช </option>
+                    <option>นครสวรรค์ </option>
+                    <option>นนทบุรี </option>
+                    <option>นราธิวาส </option>
+                    <option>น่าน </option>
+                    <option>บึงกาฬ </option>
+                    <option>บุรีรัมย์ </option>
+                    <option>ปทุมธานี </option>
+                    <option>ประจวบคีรีขันธ์ </option>
+                    <option>ปราจีนบุรี </option>
+                    <option>ปัตตานี </option>
+                    <option>พระนครศรีอยุธยา</option> 
+                    <option>พังงา </option>
+                    <option>พัทลุง </option>
+                    <option>พิจิตร </option>
+                    <option>พิษณุโลก </option>
+                    <option>เพชรบุรี </option>
+                    <option>เพชรบูรณ์ </option>
                   </select>
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="inputState">รหัสไปรษณีย์</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
+                  <label for="inputEmail4">รหัสไปรษณีย์</label>
+                  <input type="text" class="form-control" [(ngModel)]='idedit.postCodeS'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
               </div>
             </form>
           </div>
         </div>
+
         <div class="card" style="margin-top: 20px;">
           <div class="card-header">
             <h5>ข้อมูลผู้รับ</h5>
@@ -288,39 +399,80 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputEmail4">ชื่อ-สกุล</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="ชื่อ-สกุล">
+                  <input type="text" class="form-control" [(ngModel)]='idedit.nameR'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputEmail4">เบอร์โทรศัพท์</label>
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="เบอร์โทรศัพท์">
+                  <input type="text" class="form-control" [(ngModel)]='idedit.phoneR'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputAddress">ที่อยู่</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <input type="text" class="form-control" [(ngModel)]='idedit.addressR'
+                  [ngModelOptions]="{standalone:true}">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-3">
                   <label for="inputEmail4">ตำบล/แขวง</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="ตำบล/แขวง">
+                  <input type="text" class="form-control" [(ngModel)]='idedit.districtR'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
                 <div class="form-group col-md-3">
                   <label for="inputEmail4">อำเภอ/เขต</label>
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="อำเภอ/เขต">
+                  <input type="text" class="form-control" [(ngModel)]='idedit.countyR'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputState">จังหวัด</label>
                   <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
+                    <option selected></option>
+                    <option>กรุงเทพมหานคร </option>
+                    <option>กระบี่ </option>
+                    <option>กาญจนบุรี </option>
+                    <option>กาฬสินธุ์ </option>
+                    <option>กำแพงเพชร </option>
+                    <option>ขอนแก่น </option>
+                    <option>จันทบุรี </option>
+                    <option>ฉะเชิงเทรา </option>
+                    <option>ชลบุรี </option>
+                    <option>ชัยนาท </option>
+                    <option>ชัยภูมิ </option>
+                    <option>ชุมพร </option>
+                    <option>เชียงราย </option>
+                    <option>เชียงใหม่ </option>
+                    <option>ตรัง </option>
+                    <option>ตราด </option>
+                    <option>ตาก </option>
+                    <option>นครนายก </option>
+                    <option>นครปฐม </option>
+                    <option>นครพนม </option>
+                    <option>นครราชสีมา </option>
+                    <option>นครศรีธรรมราช </option>
+                    <option>นครสวรรค์ </option>
+                    <option>นนทบุรี </option>
+                    <option>นราธิวาส </option>
+                    <option>น่าน </option>
+                    <option>บึงกาฬ </option>
+                    <option>บุรีรัมย์ </option>
+                    <option>ปทุมธานี </option>
+                    <option>ประจวบคีรีขันธ์ </option>
+                    <option>ปราจีนบุรี </option>
+                    <option>ปัตตานี </option>
+                    <option>พระนครศรีอยุธยา</option> 
+                    <option>พังงา </option>
+                    <option>พัทลุง </option>
+                    <option>พิจิตร </option>
+                    <option>พิษณุโลก </option>
+                    <option>เพชรบุรี </option>
+                    <option>เพชรบูรณ์ </option>
                   </select>
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="inputState">รหัสไปรษณีย์</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
+                  <label for="inputEmail4">รหัสไปรษณีย์</label>
+                  <input type="text" class="form-control" [(ngModel)]='idedit.postCodeR'
+                    [ngModelOptions]="{standalone:true}">
                 </div>
               </div>
             </form>
@@ -328,8 +480,8 @@
         </div>
       </div>
       <!-- Modal footer -->
-      <div class="modal-footer" >
-        <button type="button" class="btn btn-warning" data-dismiss="modal">บันทึก</button>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal" (click)="EditReg(idedit)">บันทึก</button>
       </div>
     </div>
   </div>
