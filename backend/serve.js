@@ -39,9 +39,10 @@ require('./app/routes/user.routes')(app);
 require('./app/routes/auth.routes')(app);
 require('./app/routes/sender.routes')(app);
 require('./app/routes/recive.routes')(app);
-require('./app/routes/registparcel.router')(app);
+require('./app/routes/registparcel.routes')(app);
 require('./app/routes/payment.routes')(app);
 require('./app/routes/assignment.routes')(app);
+require('./app/routes/role.routes')(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
