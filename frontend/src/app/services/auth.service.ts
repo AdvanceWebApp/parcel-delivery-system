@@ -12,6 +12,7 @@ export class AuthService {
   constructor(private http : HttpClient, public local: LocalStorageService ) { }
   
   public key :string
+  public user: any[]
   
 
   signIn(authData: any){
@@ -20,6 +21,7 @@ export class AuthService {
       if(data){
         this.local.set('auth',data, 1, 'w');
         this.key = data.accessToken;
+        this.user = data;
       }
       return data;
     }))

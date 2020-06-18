@@ -13,7 +13,7 @@
                     <div class="form-group col-md-3">
                         <label>เลขพัสดุ</label>
                         <select class="form-control" [(ngModel)]="item" [ngModelOptions]="{standalone: true}">
-                            <option *ngFor="let item of parcel">{{item.id}}</option>
+                            <option *ngFor="let item of regists">{{item._id}}</option>
                         </select>
                     </div>
                     <div class="form-group col-md-2">
@@ -73,7 +73,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-5">
                         <label for="inputState">พนักงานส่ง</label>
-                        <h5>{{emp}}</h5>
+                        <input type="text" class="form-control" formControlName='staff'>
                     </div>
                 </div>
                 <div class="form-row">
@@ -88,8 +88,8 @@
                 </div><br>
             </form>
             <br>
-            <button type="submit" class="btn btn-dark">บันทึก</button>&nbsp;
-            <button type="reset" class="btn btn-light">ล้าง</button>
+            <button type="submit" class="btn btn-dark" (click)="submitClick()">บันทึก</button>&nbsp;
+            <button type="reset" class="btn btn-light" (click)="clearClick()">ล้าง</button>
         </div>
     </div>
 </div>
